@@ -3,7 +3,9 @@
 Binary Tree Level Order Traversal (https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
 Time Complexity: O(n) where n is number of elements in the given array as we will iterate over the array to get that element
+
 Space Complexity: O(1) as we are not using additional auxillary data structure and O(h) recursive stack space complexity where h will be height of the tree
+
 Explaination: Simple approach here is we will maintain level of each node at the recursive call. Then we will apply depth first search on the tree. In the DFS recursive call we will check if the result has an empty list for the level and if it doesn't have it we will create it by checking if the result size is equal to the current level. Then we will get the list of the current level and append an current element in that list. We will complete left and right recursive calls by calling the same dfs function on root.left and root.right.
 
 
@@ -56,7 +58,9 @@ class Solution {
 Course Schedule (https://leetcode.com/problems/course-schedule/)
 
 Time Complexity: O(V+E) where V is number of courses and E is number of prerequisites for that course. 
+
 Space Complexity: O(V+E) where it is adjacency list and indegree array.
+
 Explaination: First we will represent this problem in terms of graph using an adjacency list and an array to keep track of indegrees of each node which will be course. Then we will add all the nodes with zero indegree to the queue which will represent the courses that have no prerequisits. Then we will take each node in the queue and decrement the indegrees of it's children and if the indegrees of child becomes zero we will add it to the queue. If all nodes have been processed we will return true otherwise false.
 
 
